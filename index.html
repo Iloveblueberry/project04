@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>룰루레몬</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- jquery -->
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        $(function () {
+
+             $('.depth01').mouseenter(function(){
+                 $(this).children('.depth02').stop().slideDown().css({
+                    'display' : 'flex'
+                 })
+                 $('header').addClass('on')
+             })
+
+             $('.depth01').mouseleave(function(){
+                $('.depth02').stop().slideUp()
+                $('header').removeClass('on')
+             })
+
+             $('header .inner > ul li').mouseenter(function(){
+                $('header').addClass('on').css({
+                    'border-bottom' : '5px solid #333'
+                })
+             })
+             $('header .inner > ul li').mouseleave(function(){
+                $('header').removeClass('on').css({
+                    'border-bottom' : 'none'
+                })
+             })
+
+
+            // header slide
+
+            //best item
+            let smallImage = $('.best .inner .right .on');
+            let bigImage = $('.best .inner .left figure img');
+            let rankBox = $('.best .inner .left .text span');
+
+
+            smallImage.mouseenter(function(){
+
+                let bigImageChange = $(this).find('.best_img2').attr('src');
+                let rankTextChange = $(this).find('.on2').text();
+
+                bigImage.attr('src', bigImageChange)
+                rankBox.text(rankTextChange)
+            })
+
+
+            //swiper
+
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    800: {
+                        slidesPerView: 4,
+                        spaceBetween: 5,
+                    },
+                },
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });//swiper end
+
+            $('.membership .inner .m_text a').click(function(){
+                $('.pop').addClass('on')
+            })
+
+            $('.pop .inner .top_img > img').click(function(){
+                $('.pop.on').hide()
+            })
+
+            //검색창
+            $('header .inner > ul .search_box a').click(function(){
+                $('header .top_search').addClass('on')
+            })
+
+            $('header .top_search .inner .search img').click(function(){
+                $('header .top_search').removeClass('on')
+            })
+          
+        })//jquery end
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">
+                    <img class="logo1" src="img/Icon/룰루logo.png" alt="">
+                    <img class="logo2" src="img/Icon/까망룰루logo.png" alt="">
+                </a>
+            </h1>
+
+            <nav>
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">WOMEN</a>
+                        <div class="depth02 dpt21">
+                            <ul><a href="#">상의</a>
+                                <li><a href="#">스포츠브라</a></li>
+                                <li><a href="#">숏슬리브</a></li>
+                                <li><a href="#">롱슬리브</a></li>
+                                <li><a href="#">원피스&점프수트</a></li>
+                                <li><a href="#">재킷&아우터웨어</a></li>
+                                <li><a href="#">후디&스웻셔츠</a></li>
+                            </ul>
+                            <ul><a href="#">하의</a>
+                                <li><a href="#">레깅스</a>
+                                <li><a href="#">캐주얼팬츠</a>
+                                <li><a href="#">조거</a>
+                                <li><a href="#">쇼츠</a>
+                                <li><a href="#">스커트</a>
+                                <li><a href="#">언더웨어</a>
+                                <li><a href="#">여성양말</a>
+                                </li>
+                            </ul>
+                            <ul><a href="#">스포츠</a>
+                                <li><a href="#">요가</a></li>
+                                <li><a href="#">골프</a></li>
+                                <li><a href="#">스윔</a></li>
+                                <li><a href="#">테니스</a></li>
+                                <li><a href="#">데일리웨어</a></li>
+                                <li><a href="#">러닝</a></li>
+                                <li><a href="#">트레이닝</a></li>
+                            </ul>
+                        </div><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">MEN</a>
+                        <div class="depth02 dpt22">
+                            <ul><a href="#">상의</a>
+                                <li><a href="#">숏슬리브</a></li>
+                                <li><a href="#">롱슬리브</a></li>
+                                <li><a href="#">폴로셔츠</a></li>
+                                <li><a href="#">셔츠</a></li>
+                                <li><a href="#">탱크</a></li>
+                                <li><a href="#">후디&스웻셔츠</a></li>
+                                <li><a href="#">재킷&아우터웨어</a></li>
+                            </ul>
+                            <ul><a href="#">하의</a>
+                                <li><a href="#">팬츠</a></li>
+                                <li><a href="#">조거</a></li>
+                                <li><a href="#">타이츠</a></li>
+                                <li><a href="#">쇼츠</a></li>
+                                <li><a href="#">언더웨어</a></li>
+                                <li><a href="#">남성양말</a></li>
+                            </ul>
+                            <ul><a href="#">스포츠</a>
+                                <li><a href="#">요가</a></li>
+                                <li><a href="#">골프</a></li>
+                                <li><a href="#">스윔</a></li>
+                                <li><a href="#">테니스</a></li>
+                                <li><a href="#">데일리웨어</a></li>
+                                <li><a href="#">러닝</a></li>
+                                <li><a href="#">트레이닝</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="depth01">
+                        <a href="#">ACCESSORIES</a>
+                        <div class="depth02 dpt23">
+                            <a href="#">액세서리</a>
+                            <ul>
+                                <li class="left">
+                                    <ul>
+                                        <li><a href="#">가방</a></li>
+                                        <li><a href="#">요가매트</a></li>
+                                        <li><a href="#">요가소도구</a></li>
+                                    </ul>
+                                </li>
+                                <li class="right">
+                                    <ul>
+                                        <li><a href="#">모자</a></li>
+                                        <li><a href="#">장갑</a></li>
+                                        <li><a href="#">헤어 액세서리</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="depth01">
+                        <a href="#">COMMUNITY</a>
+                        <div class="depth02 dpt24">
+                            <ul><a href="#">앰배서더</a>
+                                <li>앰배서더 소개</li>
+                            </ul>
+                            <ul><a href="#">룰루레몬</a>
+                                <li>브랜드 스토리</li>
+                                <li>소셜 임팩트</li>
+                                <li>채용</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul><!-- .gnb dne -->
+            </nav>
+            <UL>
+                <li class="search_box">
+                    <a href="#">
+                        <img class="search1" src="img/Icon/돋보기.png" alt="">
+                        <img class="search2" src="img/Icon/검은색돋보기.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="bag1" src="img/Icon/흰색장바구니.png" alt="">
+                        <img class="bag2" src="img/Icon/장바구니.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        LOGIN
+                    </a>
+                </li>
+            </UL>
+        </div><!-- inner end -->
+
+        <!-- 👉👉👉👉 검색창👉👉👉👉 -->
+        <div class="top_search">
+            <div class="inner">
+                <div class="search">
+                    <input type="text" class="text" placeholder="검색어를 입력하세요.">
+                    <img src="img/Icon/icons8-닫기_블랙-24.png" alt="">
+                </div><!-- search_end -->
+                <div class="info">
+                    <div class="left">
+                        <div class="recent">
+                            <div>최근검색어</div>
+                            <div>모두 지우기</div>
+                        </div><!-- .recent end -->
+                        <p>최근 검색한 내역이 없습니다.</p>
+                    </div><!-- .left end -->
+                    <div class="right">
+                        <ul>
+                            <li><a href="#">인기 검색어</a></li>
+                            <li><a href="#">레깅스</a></li>
+                            <li><a href="#">요가</a></li>
+                            <li><a href="#">트레이닝</a></li>
+                            <li><a href="#">팬츠</a></li>
+                            <li><a href="#">골프</a></li>
+                            <li><a href="#">요가매트</a></li>
+                            <li><a href="#">스포츠브라</a></li>
+                            <li><a href="#">재킷&아우터웨어</a></li>
+                            <li><a href="#">모자</a></li>
+                        </ul>
+                    </div><!-- .right end -->
+                </div><!-- .info end -->
+            </div><!-- .inner end -->
+        </div><!-- .top_search end -->
+    </header>
+    <section class="main_visual">
+        <div class="bg_video">
+            <video autoplay loop muted>
+                <source src="img/요가.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- .bg_video end -->
+        <div class="title">
+            <h2>TOGETHER <strong>IN STRIBE</strong></h2>
+            <P>함께, 더 크게 도약</P>
+            <SPAN><a href="#">짐웨어 보러가기></a></SPAN>
+        </div><!-- .title end -->
+    </section>
+
+
+    <!-- ✨✨✨✨✨✨✨✨✨✨✨✨신상품✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨ -->
+    <section class="new">
+        <div class="inner">
+            <h3>NEW ARRIVAL</h3>
+            <div class="list">
+                <div class="left">
+                    <figure>
+                        <img src="img/여자신제품bg.png" alt="">
+                    </figure>
+                    <div class="item">
+                        <h4>FOR WOMEN</h4>
+                        <p><a href="#">View more +</a></p>
+                        <a href="#"><img src="img/여자신제품.jpg" alt=""></a>
+                    </div><!-- .item end -->
+                </div><!-- .left end -->
+                <div class="right">
+                    <figure>
+                        <img src="img/남자신제품bg.png" alt="">
+                    </figure>
+                    <div class="item">
+                        <h4>FOR MEN</h4>
+                        <p><a href="#">View more +</a></p>
+                        <a href="#"><img src="img/남자신제품.jpg" alt=""></a>
+                    </div><!-- .item end -->
+                </div><!-- .right end -->
+
+            </div><!-- .list end -->
+        </div><!-- .inner end -->
+    </section><!-- .new end -->
+
+
+    <!-- ✨✨✨✨✨✨✨✨✨✨✨✨Hot Ranking✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨ -->
+    <section class="best">
+        <div class="inner">
+            <div class="title">
+                <h3>HOT RANKING</h3>
+                <a href="#">
+                    <P>View more +</P>
+                </a>
+            </div><!-- .title end -->
+            <div class="cont">
+                <div class="left">
+                    <figure>
+                        <a href="#"><img src="img/best1.png" alt=""></a>
+                    </figure>
+                    <div class="text">
+                        <p>BEST</p>
+                        <span>1</span>
+                    </div><!-- .text end -->
+                </div><!-- .left end -->
+                <div class="right">
+                    <div class="left_list">
+                        <div class="best1 on">
+                            <p class="on2">1</p>
+                            <figure>
+                                <a href="#">
+                                    <img class="best_img1" src="img/best1-1.png" alt="">
+                                    <img class="best_img2" src="img/best1.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="text_box">
+                                <p>룰루레몬 Align™ 브이웨이스트
+                                    팬츠 24” 아시아 핏</p>
+                                <strong>159,900원</strong>
+                                <span><a href="#"><img src="img/Icon/장바구니.png" alt="">바로 담기</a></span>
+                            </div><!-- .text box end -->
+                        </div><!-- .best1 end -->
+
+                        <div class="best2 on">
+                            <p class="on2">2</p>
+                            <figure>
+                                <a href="#">
+                                    <img class="best_img1" src="img/best2-1.png" alt="">
+                                    <img class="best_img2" src="img/best2.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="text_box">
+                                <p>룰루레몬 Align™ 하이라이즈
+                                    크롭 21"</p>
+                                <strong>125,000원</strong>
+                                <span><a href="#"><img src="img/Icon/장바구니.png" alt="">바로 담기</a></span>
+
+                            </div><!-- .text box end -->
+                        </div><!-- .best2 end -->
+
+                        <div class="best3 on">
+                            <p class="on2">3</p>
+                            <figure>
+                                <a href="#">
+                                    <img class="best_img1" src="img/best3-1.png" alt="">
+                                    <img class="best_img2" src="img/best3.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="text_box">
+                                <p>패스트 앤 프리 리플렉티브<br>
+                                    하이라이즈 크롭 19”</p>
+                                <strong>169,000원</strong>
+                                <span><a href="#"><img src="img/Icon/장바구니.png" alt="">바로 담기</a></span>
+                            </div><!-- .text box end -->
+                        </div><!-- .best3 end -->
+
+                        <div class="best4 on">
+                            <p class="on2">4</p>
+                            <figure>
+                                <a href="#">
+                                    <img class="best_img1" src="img/best4-1.png" alt="">
+                                    <img class="best_img2" src="img/best4.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="text_box">
+                                <p>원더 언더 하이라이즈 크롭 23”
+                                    업데이티드 스캘럽 Full-On
+                                    Luxtreme</p>
+                                <strong>125,000원</strong>
+                                <span><a href="#"><img src="img/Icon/장바구니.png" alt="">바로 담기</a></span>
+                            </div><!-- .text box end -->
+                        </div><!-- .best4 end -->
+                    </div><!-- .left_list end -->
+
+                    <div class="right_list">
+                        <div class="best5 on">
+                            <p class="on2">5</p>
+                            <figure>
+                                <a href="#">
+                                    <img class="best_img1" src="img/best5-1.png" alt="">
+                                    <img class="best_img2" src="img/best5.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="text_box">
+                                <p>에브리웨어 벨트백 1L</p>
+                                <strong>61,000원</strong>
+                                <span><a href="#"><img src="img/Icon/장바구니.png" alt="">바로 담기</a></span>
+                            </div><!-- .text box end -->
+                        </div><!-- .best5 end -->
+
+                        <div class="best6 on">
+                            <p class="on2">6</p>
+                            <figure>
+                                <a href="#">
+                                    <img class="best_img1" src="img/best6-1.png" alt="">
+                                    <img class="best_img2" src="img/best6.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="text_box">
+                                <p>스위프틀리 테크 숏슬리브<br>
+                                    하프집 폴로 셔츠
+                                </p>
+                                <strong>100,000원</strong>
+                                <span><a href="#"><img src="img/Icon/장바구니.png" alt="">바로 담기</a></span>
+                            </div><!-- .text box end -->
+                        </div><!-- .best6 end -->
+
+                        <div class="best7 on">
+                            <p class="on2">7</p>
+                            <figure>
+                                <a href="#">
+                                    <img class="best_img1" src="img/best7-1.png" alt="">
+                                    <img class="best_img2" src="img/best7.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="text_box">
+                                <p>High-Rise Wrap<br>
+                                    Tennis Skirt</p>
+                                <strong>125,000원</strong>
+                                <span><a href="#"><img src="img/Icon/장바구니.png" alt="">바로 담기</a></span>
+                            </div><!-- .text box end -->
+                        </div><!-- .best7 end -->
+
+                        <div class="best8 on">
+                            <p class="on2">8</p>
+                            <figure>
+                                <a href="#">
+                                    <img class="best_img1" src="img/best8-1.png" alt="">
+                                    <img class="best_img2" src="img/best8.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="text_box">
+                                <p>The Mat 5mm Made<br>
+                                    With FSC™ Certified<br>
+                                    Rubber Marble</p>
+                                <strong>93,000원</strong>
+                                <span><a href="#"><img src="img/Icon/장바구니.png" alt="">바로 담기</a></span>
+                            </div><!-- .text box end -->
+                        </div><!-- .best8 end -->
+                    </div><!-- .right_list end -->
+                </div><!-- .right end -->
+            </div>
+        </div><!-- .inner end -->
+    </section><!-- .best end -->
+
+    <section class="golf">
+        <div class="inner">
+            <h3>골프웨어</h3>
+            <div>
+                <figure>
+                    <img src="img/골프메인.png" alt="">
+                </figure>
+                <div class="golf_text">
+                    <p>All day together</p>
+                    <span>일상과 필드사이</span>
+                    <strong><a href="#">골프웨어 보러가기 ></a></strong>
+                </div><!-- .golf_text end -->
+            </div>
+        </div><!-- .inner end -->
+    </section><!-- .golf end -->
+
+    <!-- ✨✨✨✨✨✨✨✨✨✨액세서리✨✨✨✨✨✨✨✨✨✨✨✨✨ -->
+    <section class="accessories">
+        <div class="inner">
+            <h3>룰루레몬 에센셜 엑세서리</h3>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <figure>
+                            <img class="ac_img1" src="img/악세사리1-1.png" alt="">
+                            <img class="ac_img2" src="img/악세사리1-2.png" alt="">
+                        </figure>
+                        <div class="ac_text">
+                            <p>어드저스터블 요가 매트 백 16L</p>
+                            <strong>93,000원</strong>
+                            <span>
+                                <a href="#">
+                                    <img src="img/Icon/장바구니.png" alt="">바로 담기
+                                </a>
+                            </span>
+                        </div><!-- .ac_text end -->
+                    </div><!-- .slide1 -->
+
+                    <div class="swiper-slide">
+                        <figure>
+                            <img class="ac_img1" src="img/악세사리2-1.png" alt="">
+                            <img class="ac_img2" src="img/악세사리2-2.png" alt="">
+                        </figure>
+                        <div class="ac_text">
+                            <p>더 (언) 매트 천연 고무 사용</p>
+                            <strong>67,000원</strong>
+                            <span>
+                                <a href="#">
+                                    <img src="img/Icon/장바구니.png" alt="">바로 담기
+                                </a>
+                            </span>
+                        </div><!-- .ac_text end -->
+                    </div><!-- .slide2 -->
+
+                    <div class="swiper-slide">
+                        <figure>
+                            <img class="ac_img1" src="img/악세사리3-1.png" alt="">
+                            <img class="ac_img2" src="img/악세사리3-2.png" alt="">
+                        </figure>
+                        <div class="ac_text">
+                            <p>노 리미츠 스트레칭 스트랩</p>
+                            <strong>24,000원</strong>
+                            <span>
+                                <a href="#">
+                                    <img src="img/Icon/장바구니.png" alt="">바로 담기
+                                </a>
+                            </span>
+                        </div><!-- .ac_text end -->
+                    </div><!-- .slide3 -->
+
+                    <div class="swiper-slide">
+                        <figure>
+                            <img class="ac_img1" src="img/악세사리4-1.png" alt="">
+                            <img class="ac_img2" src="img/악세사리4-2.png" alt="">
+                        </figure>
+                        <div class="ac_text">
+                            <p>더블 롤러L</p>
+                            <strong>78,000원</strong>
+                            <span>
+                                <a href="#">
+                                    <img src="img/Icon/장바구니.png" alt="">바로 담기
+                                </a>
+                            </span>
+                        </div><!-- .ac_text end -->
+                    </div><!-- .slide4 -->
+
+                    <div class="swiper-slide">
+                        <figure>
+                            <img class="ac_img1" src="img/악세사리5-1.png" alt="">
+                            <img class="ac_img2" src="img/악세사리5-2.png" alt="">
+                        </figure>
+                        <div class="ac_text">
+                            <p>우먼스 볼러 햇 소프트로고</p>
+                            <strong>51,000원</strong>
+                            <span>
+                                <a href="#">
+                                    <img src="img/Icon/장바구니.png" alt="">바로 담기
+                                </a>
+                            </span>
+                        </div><!-- .ac_text end -->
+                    </div><!-- .slide5 -->
+
+                    <div class="swiper-slide">
+                        <figure>
+                            <img class="ac_img1" src="img/악세사리6-1.png" alt="">
+                            <img class="ac_img2" src="img/악세사리6-2.png" alt="">
+                        </figure>
+                        <div class="ac_text">
+                            <p>우먼스 스위프틀리 와이드 헤드밴드</p>
+                            <strong>29,000원</strong>
+                            <span>
+                                <a href="#">
+                                    <img src="img/Icon/장바구니.png" alt="">바로 담기
+                                </a>
+                            </span>
+                        </div><!-- .ac_text end -->
+                    </div><!-- .slide6 -->
+                </div><!-- .swiper-slide end -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div><!-- .swiper end -->
+        </div><!-- .inner end -->
+    </section><!-- .accessories end -->
+
+    <!-- ✨✨✨✨✨구독신청✨✨✨✨✨✨✨ -->
+    <section class="membership">
+        <div class="inner">
+            <div class="m_text">
+                <h3>룰루레몬 뉴스레터 구독신청</h3>
+                <p>룰루레몬 신제품, 스웻라이프 컨텐츠 및 이벤트 소식을 제일 먼저 받아보세요. 구독은 언제든지 취소 할 수 있어요.</p>
+                <span><a href="#">구독 신청하기</a></span>
+            </div><!-- .m_text end -->
+        </div><!-- inner end -->
+    </section><!-- membership -->
+
+    <!-- ✨✨✨✨✨✨✨✨✨pop-up✨✨✨✨✨✨✨✨✨✨ -->
+    <div class="pop">
+        <div class="inner">
+            <div class="top_img">
+                <figure>
+                    <img src="img/lululemon run email hero.webp" alt="">
+                </figure>
+                <div class="text">
+                    <img src="img/Icon/룰루logo2.png" alt="">
+                    <p>10% 할인 기회</p>
+                </div><!-- .text end -->
+                <img src="img/Icon/icons8-닫기-24.png" alt="">
+            </div><!-- .top_img end -->
+            <div class="check">
+                <div class="email">
+                    <input type="email" class="search" placeholder="이메일 주소를 입력하세요.">
+                </div><!-- .email end -->
+                <div class="check_box" id="agree">
+                    <div>
+                        <input type="checkbox">
+                        <p>모두 동의</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="age">
+                        <p><span>*</span>본인은 14세 이상 입니다.</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="news">
+                        <p><span>*</span>룰루레몬 뉴스레터 구독에 동의합니다.</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="info">
+                        <p><span>*</span>뉴스레터 및 마케팅 정보 제공을 위한<strong>개인정보 수집 및 이용에 </strong>동의합니다.</p>
+                    </div>
+                </div><!-- .check_box end -->
+                <div class="apply">
+                    <p><a href="#">구독 신청하기</a></p>
+                </div><!-- .apply end -->
+            </div><!-- .check_end -->
+        </div><!-- .inner end -->
+    </div><!-- .pop end -->
+
+    <!-- 👣👣👣👣👣👣👣footer👣👣👣👣👣👣👣👣👣 -->
+    <footer>
+        <div class="inner">
+            <div class="left">
+                <div class="company1">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">제휴/입점문의</a></li>
+                    </ul>
+                </div><!-- .company end -->
+                <div class="company2">
+                    <ul>
+                        <li>룰루레몬애틀라티카코리아 유한회사</li>
+                        <li>대표: 가레스다니엘제임스포프</li>
+                        <li>개인정보관리책임자: 줄리 에버릴</li>
+                        <li>주소: 서울시 강남구 선릉로 835, 3층 (신사동)</li>
+                    </ul>
+                    <ul>
+                        <li>사업자 등록번호 : 220-88-88573 (사업자정보확인)</li>
+                        <li>통신판매업신고번호 : 2018-서울강남-01176</li>
+                        <li>호스팅 서비스 사업자: Salesforce.com inc.</li>
+                    </ul>
+                </div><!-- .company2 -->
+            </div><!-- .left end -->
+            <div class="right">
+                <div class="info">
+                    <div>
+                        <a href="#">
+                            <img src="img/Icon/icons8-phone-40.png" alt="">
+                            070.4769.7965</a>
+                    </div>
+                    <div class="sns">
+                        <a href="https://ko-kr.facebook.com/"><img src="img/Icon/icons8-facebook-40.png" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="img/Icon/icons8-instagram-40.png" alt=""></a>
+                        <a href="https://twitter.com/?lang=ko"><img src="img/Icon/icons8-twitter-40.png" alt=""></a>
+                    </div><!-- .sns end -->
+                </div><!-- info end -->
+                <div class="time">
+                    <div class="call_center">
+                        <div class="icon">
+                            <a href="#">
+                                <img src="img/Icon/icons8-question-40.png" alt="">
+                                <span>고객센터</span></a>
+                        </div>
+                        <div>
+                            <p>평일 9:00AM-6:00PM<span>/(점심시간 12:00-1:00PM)</span>
+                            </p>
+                        </div>
+                    </div><!-- .call_center end -->
+                    <div class="delivery">
+                        <div class="icon">
+                            <a href="#">
+                                <img src="img/Icon/icons8-in-transit-40.png" alt="">
+                                <span>배송조회</span></a>
+                        </div><!-- .icon end -->
+                    </div><!-- .delivery end -->
+                </div><!-- .time end -->
+                <div>
+                    <p>© lululemon athletica Korea ltd. All rights reserved</p>
+                </div>
+            </div><!-- .right end -->
+        </div><!-- .inner end -->
+    </footer>
+</body>
+
+</html>
